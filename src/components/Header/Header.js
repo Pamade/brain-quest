@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Header() {
+  const [isMenu, setIsMenu] = useState(false);
+
   return (
     <header className="header">
-      <div className="header__wrapper">
-        <p className="header__name">Quest Brain</p>
-        <ul className="header__list">
+      <nav className="header__nav">
+        <Link className="header__list-home" to="/">
+          Quest Brain
+        </Link>
+        <ul
+          className={
+            isMenu ? "header__list header__nav-mobile-show" : "header__list"
+          }
+        >
           <li className="header__list-item">
-            <Link className="header__list-link" to="#">
-              Game 1
+            <Link className="header__list-link" to="rememberNumber">
+              Remember Number
             </Link>
           </li>
           <li className="header__list-item">
@@ -18,7 +27,12 @@ function Header() {
             </Link>
           </li>
         </ul>
-      </div>
+        <GiHamburgerMenu
+          onClick={() => setIsMenu(!isMenu)}
+          className="header__hamburger"
+          fontSize={"25px"}
+        />
+      </nav>
     </header>
   );
 }

@@ -1,72 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
 
-.content{
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.content {
     min-height: 100vh;
-    background-color: #e3eaf8;
+    background-color: #3b73f8;
     color: black;
 }
-.wrapper{
-    width: 80%;
+
+.wrapper {
+    width: 100%;
     margin: 0 auto;
-    
-}
-.header{
-    background-color: #c1d3fe;
-    padding: 1.5rem 0;
-    &__wrapper{
-        display: flex;
-        justify-content: space-between;
-        width:80%;
-        margin: 0 auto;
-    }
-    &__list-item{
-        display: inline;
-    }
-    &__list-link{
-        margin-left: 2rem;
-        color: black;
-        text-decoration: none;
-    }
-}
-
-.game-wrapper{
-    padding: 2rem 0;
-    justify-content: space-between;
-    text-align: center;
-    background-color: #3b73f8;
-    color: white;
-    &__box{
-        width: 10%;
-    }
-    &__main-box{
-        flex-grow: 1;
-    }
-    &__window-game{
-        border: 1px solid black;
-        height: 60vh;
-        width: 100%;
-    }
-}
-
-.remember-number{
-    &__numbers{
-        margin: 4rem 0;
-        font-size: 4rem;
-    }
-    &__heading{
-        font-size: 2rem;
-        letter-spacing: 1px;
-    }
-    &__input{
-        border: 1px solid black;
-        font-size: 1.1rem;
-        padding: 0.3rem 1rem;
-        border-radius: 5px;
-        letter-spacing: 2px;
-        outline: none;
-    }
 }

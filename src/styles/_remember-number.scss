@@ -1,0 +1,32 @@
+.game-wrapper{
+    padding: 2rem 0;
+    text-align: center;
+    color: white;
+    &__box{
+        width: 10%;
+    }
+    &__window-game{
+        border: 1px solid black;
+        height: 60vh;
+        width: 100%;
+    }
+}
+
+.remember-number{
+    &__numbers{
+        margin: 4rem 0;
+        font-size: 4rem;
+    }
+    &__heading{
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    &__input{
+        border: 1px solid black;
+        font-size: 1.1rem;
+        padding: 0.3rem 1rem;
+        border-radius: 5px;
+        letter-spacing: 2px;
+        outline: none;
+    }
+}
