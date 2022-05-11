@@ -13,7 +13,7 @@ function RememberNumber() {
   const [multiplier, setMultiplier] = useState(1);
   const [stage, setStage] = useState(0);
 
-  const num = Math.floor(
+  const randomNumber = Math.floor(
     Math.random() * (multiplier * 99 - multiplier * 10 + 1) + 10 * multiplier
   ).toString();
 
@@ -54,36 +54,57 @@ function RememberNumber() {
     setGuessing(false);
     setRunning(true);
     setProgress(100);
-    setNumberToGuess(num);
+    setNumberToGuess(randomNumber);
   };
+
+  const progressBar = (
+    <div>
+      <p className="remember-number__number">{numberToGuess}</p>
+      <Line percent={progress} strokeWidth="1" strokeColor="red" />
+    </div>
+  );
+
+  const displayInitialButton = (
+    <button className="btn" onClick={handleStart}>
+      Start the game
+    </button>
+  );
+
+  const displayGuessingInput = (
+    <div>
+      <input
+        type="text"
+        className="remember-number__input"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button className="btn" onClick={confirmGuess}>
+        Confirm guess
+      </button>
+    </div>
+  );
 
   return (
     <div className="remember-number">
-      <h2 className="remember-number__heading game-heading">Remember Number</h2>
-      <p
-        className="remember-number__stage"
-        style={{ margin: "0.7rem 0 3rem 0" }}
-      >
-        {isGuessed || isGuessed === false ? "Finished stages " + stage : ""}
-      </p>
-      {running ? (
-        <>
-          <p style={{ fontSize: "50px" }}>{numberToGuess}</p>
-          <Line percent={progress} strokeWidth="1" strokeColor="red" />
-        </>
-      ) : (
-        ""
-      )}
+      <div className="game-description">
+        <h3 className="remember-number__heading game-heading">
+          Remember Number
+        </h3>
+        <p className="remember-number__stage stage">
+          {`Finished stages ${stage}`}
+        </p>
+      </div>
+      {running ? progressBar : ""}
       {numberToGuess === inputValue && !guessing ? (
         <>
-          <h2>Correct!</h2>
+          <h3 className="is-right">Correct!</h3>
           <button className="btn" onClick={handleStart}>
             Start stage {stage + 1}
           </button>
         </>
       ) : isGuessed === false ? (
         <>
-          <h2>Incorrect</h2>
+          <h3 className="is-right">Incorrect</h3>
           <button className="btn" onClick={handleStart}>
             You can start again
           </button>
@@ -91,28 +112,8 @@ function RememberNumber() {
       ) : (
         ""
       )}
-      {guessing ? (
-        <>
-          <input
-            type="text"
-            className="remember-number__input"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-          <button className="btn" onClick={confirmGuess}>
-            Confirm guess
-          </button>
-        </>
-      ) : (
-        ""
-      )}
-      {numberToGuess === undefined ? (
-        <button className="btn" onClick={handleStart}>
-          Start the game
-        </button>
-      ) : (
-        ""
-      )}
+      {guessing ? displayGuessingInput : ""}
+      {numberToGuess === undefined ? displayInitialButton : ""}
     </div>
   );
 }

@@ -13,13 +13,13 @@
 }
 
 .remember-number{
+    &__number{
+        font-size: 50px;
+        user-select: none;
+    }
     &__numbers{
         margin: 4rem 0;
         font-size: 4rem;
-    }
-    &__heading{
-        font-size: 2rem;
-        letter-spacing: 1px;
     }
     &__input{
         border: 1px solid black;

@@ -2,7 +2,8 @@ import React from "react";
 import Header from "./components/Header/Header";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import RememberNumber from "./components/Games/RememberNumber";
+import RememberNumber from "./components/Games/RememberNumber/RememberNumber";
+import WhereItWas from "./components/Games/WhereItWas/WhereItWas";
 
 function Layout() {
   return (
@@ -10,10 +11,10 @@ function Layout() {
       <Header />
       <div className="wrapper">
         <section className="game-wrapper">
-          <div className="game-wrapper__box"></div>
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/rememberNumber" element={<RememberNumber />} />
+            <Route path="/whereItWas" element={<WhereItWas />} />
           </Routes>
         </section>
       </div>

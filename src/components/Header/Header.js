@@ -22,8 +22,8 @@ function Header() {
             </Link>
           </li>
           <li className="header__list-item">
-            <Link className="header__list-link" to="#">
-              Game 2
+            <Link className="header__list-link" to="/whereItWas">
+              Where it was
             </Link>
           </li>
         </ul>

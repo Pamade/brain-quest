@@ -1,0 +1,41 @@
+@keyframes showMarks {
+    0% {opacity: 0} ;
+    100% {opacity: 1};
+}
+
+.where-it-was{
+    &__box{
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin: 1rem auto;
+        width: 60%;
+        border: 5px solid white;
+        border-radius: 5px;
+    }
+    &__item{
+        width:33.333%;
+        line-height: 50px;
+        font-size: 30px;
+        min-height: 50px;
+    }
+    &__item-to-find{
+        font-size: 1.3rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    &__question-mark{
+        animation-duration: 2s;
+        animation-name: showMarks;
+        animation-fill-mode: forwards;
+        cursor: pointer;
+        font-size: 50px;
+        font-weight: bold;
+        background-image: url("https://www.azutura.com/media/catalog/product/cache/47/image/650x/040ec09b1e35df139433887a97daa66f/W/S/WS-47240_WP.jpg");
+        &:hover{
+            background-image:repeating-linear-gradient(rgb(49, 49, 49), rgb(3, 1, 34)) ;
+        }
+    }
+}
