@@ -1,4 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addResult } from "../Dashboard/dashboardSlice";
 
 const initialValues = [
   { value: 0, isHidden: true },
@@ -7,6 +10,7 @@ const initialValues = [
 ];
 
 function WhereItWas() {
+  const dispatch = useDispatch();
   const [gameStarted, setGameStarted] = useState(false);
   const [itemsDisplayed, setItemsDisplayed] = useState(false);
   const [itemsToFind, setItemsToFind] = useState(initialValues);
@@ -71,6 +75,7 @@ function WhereItWas() {
         setItemsToFind([...itemsToFind, { value: 0, isHidden: true }]);
       }
     } else {
+      dispatch(addResult({ gameName: "whereItWas", scores: stage }));
       setItemsToFind(initialValues);
       setHideBoard(true);
     }

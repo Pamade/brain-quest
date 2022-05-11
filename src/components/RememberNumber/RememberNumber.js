@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "rc-progress";
+import { useDispatch } from "react-redux";
+import { addResult } from "../Dashboard/dashboardSlice";
 
 let interval = undefined;
 
 function RememberNumber() {
+  const dispatch = useDispatch();
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState(100);
   const [inputValue, setInputValue] = useState("");
@@ -42,6 +45,7 @@ function RememberNumber() {
       setMultiplier((prev) => prev * 10);
       setStage((prev) => (prev += 1));
     } else {
+      dispatch(addResult({ gameName: "rememberNumber", scores: stage }));
       setMultiplier(1);
       setIsGuessed(false);
     }
