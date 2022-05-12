@@ -9,7 +9,7 @@ function Header() {
     <header className="header">
       <nav className="header__nav">
         <Link className="header__list-home" to="/">
-          Quest Brain
+          Brain Quest
         </Link>
         <ul
           className={

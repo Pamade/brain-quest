@@ -1,13 +1,13 @@
 .btn {
     background-color: transparent;
-    color: white;
+    color: $primary;
     padding: 0.3rem;
-    border: 2px solid white;
+    border: 2px solid $primary;
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
     &:hover{
-        background-color: darkblue;
+        background-color: $darkBackground;
     }
 }

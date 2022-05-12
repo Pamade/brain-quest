@@ -1,7 +1,9 @@
-@import "./components";
-@import "./base";
-@import "./home";
-@import "./header";
-@import "./remember-number";
-@import "./where-it-was";
-@import "./dashboard";
+@import "./abstracts/variables";
+@import "./components/button";
+@import "./abstracts/mixins";
+@import "./base/base";
+@import "./layout/home";
+@import "./layout/header";
+@import "./layout/remember-number";
+@import "./layout/where-it-was";
+@import "./layout/dashboard";

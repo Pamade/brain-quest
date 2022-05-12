@@ -1,11 +1,9 @@
 .dashboard{
-    width: 80%;
-    margin: 0 auto;
+    @include baseWidth;
     &__wrapper{
+        @include flexColumn;
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(18, 60, 199);
+        background-color: $darkBackground;
         padding: 1rem;
     }
     &__logo{

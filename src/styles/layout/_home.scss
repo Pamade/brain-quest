@@ -2,8 +2,7 @@
     width: 80%;
     margin: 2rem auto;
     &__wrapper{
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         margin: 2rem 0;
         text-align: left;
     }
@@ -16,7 +15,7 @@
     &__video{
         margin-top: 0.2rem;
         width: 100%;
-        border: 3px dotted black;
+        border: 3px dotted $secondary;
     }
 }
 

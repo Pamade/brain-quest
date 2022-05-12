@@ -3,20 +3,18 @@
     padding: 1.5rem 0;
     position: relative;
     &__nav{
+        @include baseWidth;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 80%;
-        margin: 0 auto;
     }
     &__list{
+        @include flexColumn;
         position: absolute;
-        display: flex;
-        flex-direction: column;
         left: 0%;
-        top: 100%;
+        top: 80%;
         padding: 2rem 0;
-        background-color: rgb(6, 0, 37);
+        background-color: $secondary;
         width: 100%;
         text-align: center;
         font-size: 13px;
@@ -26,7 +24,7 @@
         margin: 0 auto;   
     }
     &__list-home{
-        color: black;
+        color: $secondary;
     }
     &__list-item{
         display: block;
@@ -37,18 +35,13 @@
     .header{
         position: static;
         &__nav{
-            display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
-            width: 80%;
-            margin: 0 auto;
         }
         &__list{
             display:block;
             position: static;
             background-color: transparent;
-            width: 100%;
             margin: 0 auto;
             padding: 0;
             text-align: right;
@@ -62,7 +55,7 @@
             margin: 0 0.5rem;
         }
         &__list-home{
-            width: 100%;
+            width: 20%;
         }
         &__hamburger{
             display: none;

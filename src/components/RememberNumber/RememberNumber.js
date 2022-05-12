@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "rc-progress";
 import { useDispatch } from "react-redux";
-import { addResult } from "../features/dashboardSlice";
+import { addResult } from "../../features/dashboardSlice";
 
 let interval = undefined;
 

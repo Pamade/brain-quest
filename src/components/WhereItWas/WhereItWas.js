@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addResult } from "../features/dashboardSlice";
+import { addResult } from "../../features/dashboardSlice";
 
 const initialValues = [
   { value: 0, isHidden: true },
