@@ -1,0 +1,82 @@
+.dashboard{
+    width: 80%;
+    margin: 0 auto;
+    &__wrapper{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(18, 60, 199);
+        padding: 1rem;
+    }
+    &__logo{
+        background-color: black;
+        text-align: center;
+        max-width: 8rem;
+        width: 250px;
+        font-size: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            color: rgb(22, 1, 63);
+            background-color: rgb(235, 234, 255);
+        }
+    }
+    &__box{
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        text-align: left;
+        margin: 0.5rem 0;
+    }
+    &__description-box{
+        width: 55%;
+        margin-left: 1rem;
+        font-size: 0.8rem;
+    }
+    &__name{
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 0.9px;
+    }
+    &__scores{
+        font-size: 0.85rem;
+        font-weight: normal;
+    }
+}
+
+@media (max-width: 450px){
+    .dashboard {
+    &__box{
+        flex-direction: column;
+    }
+    &__name{
+        margin: 0.5rem 0;
+    }
+    &__description-box{
+        width: 100%;
+        margin: 0 auto;
+    }
+    &__description{
+        text-align: left;
+    }
+}
+}
+
+@media (min-width:700px){
+   .dashboard{
+        &__box{
+            flex-wrap: nowrap;
+        }
+        &__scores{
+            margin-left: 1rem;
+            width: 40%;
+        }
+   } 
+}
+
+@media (min-width: 1200px){
+    .dashboard{
+        width: 60%;
+    }
+}

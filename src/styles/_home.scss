@@ -1,0 +1,34 @@
+.home{
+    width: 80%;
+    margin: 2rem auto;
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+        text-align: left;
+    }
+    &__box{
+        margin: 1rem 0;
+    }
+    &__description{
+        margin: 0.3rem 0;
+    }
+    &__video{
+        margin-top: 0.2rem;
+        width: 100%;
+        border: 3px dotted black;
+    }
+}
+
+@media (min-width: 700px){
+    .home{
+        &__wrapper{
+            flex-direction: row;
+            margin: 5rem 0;
+            justify-content: space-between;
+        }
+        &__box{
+            width: 48%;
+        }
+    }
+}

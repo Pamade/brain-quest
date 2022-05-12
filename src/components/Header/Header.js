@@ -17,6 +17,11 @@ function Header() {
           }
         >
           <li className="header__list-item">
+            <Link className="header__list-link" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="header__list-item">
             <Link className="header__list-link" to="dashboard">
               Dashboard
             </Link>
