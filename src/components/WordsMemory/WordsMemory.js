@@ -59,16 +59,12 @@ function WordsMemory() {
       setStage((prev) => (prev += 1));
     } else {
       setLives((prev) => (prev -= 1));
-      // if (!wordsDisplayed.includes(singleWord)) {
-      //   setWordsDisplayed((prev) => [...prev, singleWord]);
-      // }
       if (lives === 1) {
         dispatch(addResult({ gameName: "wordsMemory", scores: stage }));
         setGameReset(true);
       }
     }
     handleStart();
-    console.log(wordsDisplayed);
   };
 
   return (

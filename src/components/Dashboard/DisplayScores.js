@@ -24,7 +24,7 @@ function DisplayScores({ gameName }) {
     })
     .splice(0, 3);
 
-  const unixTime = recent[0].date;
+  const unixTime = recent[0].date || "";
   const time = new Date(unixTime);
   const lastTimePlayed = time.toLocaleString([], {
     year: "numeric",
@@ -40,7 +40,9 @@ function DisplayScores({ gameName }) {
         <p className="dashboard__scores-p">play the game to see scores</p>
       ) : (
         <>
-          <p className="dashboard__time">Last Played: {lastTimePlayed}</p>
+          <p className="dashboard__time">
+            Last Played: {lastTimePlayed ? lastTimePlayed : ""}
+          </p>
           <p className="dashboard__scores-p">
             Best scores:
             {bests.map((score, i) => (
