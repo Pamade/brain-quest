@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addResult } from "../../features/dashboardSlice";
@@ -10,6 +11,7 @@ function WordsMemory() {
   const [singleWord, setSingleWord] = useState("");
   const [stage, setStage] = useState(0);
   const [lives, setLives] = useState(3);
+  const [gameReset, setGameReset] = useState(false);
 
   useEffect(() => {
     fetch("https://random-word-api.herokuapp.com/word?number=200").then(
@@ -19,9 +21,15 @@ function WordsMemory() {
           setWordsToDisplay(data.slice(0, 3));
         })
     );
-  }, []);
+  }, [gameReset]);
 
   const handleStart = () => {
+    if (lives === 0) {
+      setSingleWord("");
+      setLives(3);
+      setStage(0);
+      setWordsDisplayed([]);
+    }
     const allWordsCopy = [...allWords];
     const randomNewWord = allWords[Math.floor(Math.random() * allWords.length)];
     const newArr = allWordsCopy.filter((word) => word !== randomNewWord);
@@ -51,11 +59,16 @@ function WordsMemory() {
       setStage((prev) => (prev += 1));
     } else {
       setLives((prev) => (prev -= 1));
+      // if (!wordsDisplayed.includes(singleWord)) {
+      //   setWordsDisplayed((prev) => [...prev, singleWord]);
+      // }
       if (lives === 1) {
         dispatch(addResult({ gameName: "wordsMemory", scores: stage }));
+        setGameReset(true);
       }
     }
     handleStart();
+    console.log(wordsDisplayed);
   };
 
   return (
@@ -97,7 +110,9 @@ function WordsMemory() {
         {lives === 0 && (
           <>
             <h2>You lost</h2>
-            <button className="btn">You can start again</button>
+            <button onClick={handleStart} className="btn">
+              You can start again
+            </button>
           </>
         )}
       </div>
