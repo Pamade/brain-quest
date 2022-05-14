@@ -24,12 +24,23 @@ function DisplayScores({ gameName }) {
     })
     .splice(0, 3);
 
+  const unixTime = recent[0].date;
+  const time = new Date(unixTime);
+  const lastTimePlayed = time.toLocaleString([], {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
     <div className="dashboard__scores">
       {recent.length === 0 ? (
         <p className="dashboard__scores-p">play the game to see scores</p>
       ) : (
         <>
+          <p className="dashboard__time">Last Played: {lastTimePlayed}</p>
           <p className="dashboard__scores-p">
             Best scores:
             {bests.map((score, i) => (

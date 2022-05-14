@@ -41,6 +41,10 @@
         font-size: 0.85rem;
         font-weight: normal;
     }
+    &__time{
+        font-size: 0.75rem;
+        border-bottom: 1px solid $primary;
+    }
 }
 
 @media (max-width: 450px){
