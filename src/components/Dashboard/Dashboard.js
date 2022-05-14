@@ -4,9 +4,7 @@ import DisplayScores from "./DisplayScores";
 function Dashboard() {
   return (
     <div className="dashboard">
-      <div className="game-description">
-        <h3 className="game-heading">Dashboard</h3>
-      </div>
+      <h3 className="game-heading">Dashboard</h3>
       <div className="dashboard__wrapper">
         <div className="dashboard__box dashboard__box-logo">
           <Link to="../whereItWas">
@@ -31,6 +29,18 @@ function Dashboard() {
             </p>
           </div>
           <DisplayScores gameName={"rememberNumber"} />
+        </div>
+        <div className="dashboard__box dashboard__box-logo">
+          <Link to="../wordsMemory">
+            <div className="dashboard__logo">W</div>
+          </Link>
+          <div className="dashboard__description-box">
+            <p className="dashboard__name">Word Memory</p>
+            <p className="dashboard__description">
+              Select if the word was shown before
+            </p>
+          </div>
+          <DisplayScores gameName={"wordsMemory"} />
         </div>
       </div>
     </div>

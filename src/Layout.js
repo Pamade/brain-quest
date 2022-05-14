@@ -5,6 +5,8 @@ import Home from "./components/Home/Home";
 import RememberNumber from "./components/RememberNumber/RememberNumber";
 import WhereItWas from "./components/WhereItWas/WhereItWas";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Error from "./components/Error/Error";
+import WordsMemory from "./components/WordsMemory/WordsMemory";
 
 function Layout() {
   return (
@@ -17,6 +19,8 @@ function Layout() {
             <Route path="/rememberNumber" element={<RememberNumber />} />
             <Route path="/whereItWas" element={<WhereItWas />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/wordsMemory" element={<WordsMemory />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </section>
       </div>

@@ -24,6 +24,8 @@ a {
     font-size: 3rem;
     border-bottom: 2px solid $primary;
     letter-spacing: 1px;
+    margin-bottom: 1rem;
+    
 }
 
 .stage{
@@ -42,11 +44,6 @@ a {
         height: 60vh;
         width: 100%;
     }
-}
-
-.game-description{
-    width: 80%;
-    margin: 1.5rem auto;
 }
 
 .is-right{

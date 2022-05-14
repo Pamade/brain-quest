@@ -154,10 +154,8 @@ function WhereItWas() {
   return (
     <section className="where-it-was">
       <div className="where-it-was__wrapper">
-        <div className="game-description">
-          <h2 className="game-heading where-ite-was__heading">Where it was</h2>
-          <p className="stage where-it-was__stage">Finished stages {stage}</p>
-        </div>
+        <h3 className="game-heading where-ite-was__heading">Where it was</h3>
+        <p className="stage">Finished stages {stage}</p>
         {textWhereWasThat}
         {displayResult()}
         {!hideBoard && gameStarted && itemsToFind ? showItems : ""}

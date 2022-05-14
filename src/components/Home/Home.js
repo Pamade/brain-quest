@@ -6,7 +6,7 @@ function Home() {
       <h1 className="game-heading">Brain Quest</h1>
       <div className="home__wrapper">
         <div className="home__box">
-          <h2>Remember Number</h2>
+          <h2 className="home__heading">Remember Number</h2>
           <p className="home__description">Remember the biggest number</p>
           <p className="home__preview-p">Preview</p>
           <div

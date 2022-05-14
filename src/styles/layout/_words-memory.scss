@@ -1,0 +1,12 @@
+
+.words-memory{
+  @include baseWidth;
+  &__word{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  &__button{
+    margin: 1rem;
+  }
+}

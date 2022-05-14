@@ -4,6 +4,7 @@
 }
 
 .where-it-was{
+    @include baseWidth;
     &__box{
         text-align: center;
         display: flex;

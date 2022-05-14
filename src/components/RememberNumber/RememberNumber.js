@@ -90,14 +90,8 @@ function RememberNumber() {
 
   return (
     <div className="remember-number">
-      <div className="game-description">
-        <h3 className="remember-number__heading game-heading">
-          Remember Number
-        </h3>
-        <p className="remember-number__stage stage">
-          {`Finished stages ${stage}`}
-        </p>
-      </div>
+      <h3 className="remember-number__heading game-heading">Remember Number</h3>
+      <p className="stage">{`Finished stages ${stage}`}</p>
       {running ? progressBar : ""}
       {numberToGuess === inputValue && !guessing ? (
         <>
