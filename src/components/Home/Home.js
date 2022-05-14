@@ -67,6 +67,39 @@ function Home() {
             ></iframe>
           </div>
         </div>
+        <div className="home__box">
+          <h2>Words Memory</h2>
+          <p className="home__description">
+            Select if the word was shown before
+          </p>
+          <p className="home__preview-p">Preview</p>
+          <div
+            style={{
+              width: "100%",
+              height: "0",
+              position: "relative",
+              paddingBottom: "19.219%",
+            }}
+            className="home__video"
+          >
+            <iframe
+              src="https://streamable.com/e/ydfxn2?autoplay=1&nocontrols=1"
+              frameBorder="0"
+              width="100%"
+              height="100%"
+              allowFullScreen
+              allow="autoplay"
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                left: "0px",
+                top: "0px",
+                overflow: "hidden",
+              }}
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   );
