@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 function DisplayScores({ gameName }) {
   const data = useSelector((state) => state.dashboard.results);
-
   if (data.length === 0)
     return (
       <div className="dashboard__scores">
@@ -24,16 +23,6 @@ function DisplayScores({ gameName }) {
     })
     .splice(0, 3);
 
-  const unixTime = recent[0].date || "";
-  const time = new Date(unixTime);
-  const lastTimePlayed = time.toLocaleString([], {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-
   return (
     <div className="dashboard__scores">
       {recent.length === 0 ? (
@@ -41,7 +30,14 @@ function DisplayScores({ gameName }) {
       ) : (
         <>
           <p className="dashboard__time">
-            Last Played: {lastTimePlayed ? lastTimePlayed : ""}
+            Last Played:{" "}
+            {new Date(recent[0].date).toLocaleString([], {
+              year: "numeric",
+              month: "numeric",
+              day: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
           </p>
           <p className="dashboard__scores-p">
             Best scores:
