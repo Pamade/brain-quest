@@ -7,6 +7,7 @@ import WhereItWas from "./components/WhereItWas/WhereItWas";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Error from "./components/Error/Error";
 import WordsMemory from "./components/WordsMemory/WordsMemory";
+import CircleNinja from "./components/CircleNinja/CircleNinja";
 
 function Layout() {
   return (
@@ -20,6 +21,7 @@ function Layout() {
             <Route path="/whereItWas" element={<WhereItWas />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/wordsMemory" element={<WordsMemory />} />
+            <Route path="/circleNinja" element={<CircleNinja />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </section>

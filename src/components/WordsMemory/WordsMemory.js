@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addResult } from "../../features/dashboardSlice";
@@ -67,52 +66,58 @@ function WordsMemory() {
     handleStart();
   };
 
-  return (
-    <div className="words-memory">
-      <div className="words-memory__description">
-        <h3 className="game-heading words-memory__heading">Words Memory</h3>
-        <p className="stage">Finished stages {stage}</p>
-
-        {lives !== 0 && singleWord !== "" && (
-          <>
-            <p>Lives: {lives}</p>
-            <p className="words-memory__word">{singleWord}</p>
-          </>
-        )}
-        {singleWord === "" ? (
-          <button onClick={handleStart} className="btn">
-            Start the game
-          </button>
-        ) : (
-          <>
-            {lives !== 0 && (
-              <>
-                <button
-                  onClick={() => handleGuess(false)}
-                  className="btn words-memory__button"
-                >
-                  SEEN
-                </button>
-                <button
-                  onClick={() => handleGuess(true)}
-                  className="btn words-memory__button"
-                >
-                  NEW
-                </button>
-              </>
-            )}
-          </>
-        )}
-        {lives === 0 && (
-          <>
-            <h2>You lost</h2>
-            <button onClick={handleStart} className="btn">
-              You can start again
+  const gameStart =
+    singleWord === "" ? (
+      <button onClick={handleStart} className="btn">
+        Start the game
+      </button>
+    ) : (
+      <div>
+        {lives !== 0 && (
+          <div>
+            <button
+              onClick={() => handleGuess(false)}
+              className="btn words-memory__button"
+            >
+              SEEN
             </button>
-          </>
+            <button
+              onClick={() => handleGuess(true)}
+              className="btn words-memory__button"
+            >
+              NEW
+            </button>
+          </div>
         )}
       </div>
+    );
+
+  const livesAndWord = lives !== 0 && singleWord !== "" && (
+    <div>
+      <p className="words-memory__lives">Lives: {lives}</p>
+      <p className="words-memory__word">{singleWord}</p>
     </div>
+  );
+
+  const gameLost = lives === 0 && (
+    <div>
+      <h2 className="is-right">You lost</h2>
+      <button onClick={handleStart} className="btn">
+        You can start again
+      </button>
+    </div>
+  );
+
+  return (
+    <section className="words-memory">
+      <div className="words-memory__wrapper">
+        <h3 className="game-heading words-memory__heading">Words Memory</h3>
+        <p className="stage">Finished stages {stage}</p>
+        {livesAndWord}
+        {gameStart}
+        {gameLost}
+      </div>
+    </section>
   );
 }
 

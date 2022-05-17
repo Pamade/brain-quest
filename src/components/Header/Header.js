@@ -41,6 +41,11 @@ function Header() {
               Words Memory
             </Link>
           </li>
+          <li className="header__list-item">
+            <Link className="header__list-link" to="/circleNinja">
+              Circle Ninja
+            </Link>
+          </li>
         </ul>
         <GiHamburgerMenu
           onClick={() => setIsMenu(!isMenu)}

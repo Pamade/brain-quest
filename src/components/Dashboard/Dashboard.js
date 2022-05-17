@@ -24,9 +24,7 @@ function Dashboard() {
           </Link>
           <div className="dashboard__description-box">
             <p className="dashboard__name">Remember Number</p>
-            <p className="dashboard__description">
-              Remember where were displayed recently shown numbers
-            </p>
+            <p className="dashboard__description">Remember previous number</p>
           </div>
           <DisplayScores gameName={"rememberNumber"} />
         </div>
@@ -41,6 +39,16 @@ function Dashboard() {
             </p>
           </div>
           <DisplayScores gameName={"wordsMemory"} />
+        </div>
+        <div className="dashboard__box dashboard__box-logo">
+          <Link to="../circleNinja">
+            <div className="dashboard__logo">C</div>
+          </Link>
+          <div className="dashboard__description-box">
+            <p className="dashboard__name">Circle Ninja</p>
+            <p className="dashboard__description">Hit the circles</p>
+          </div>
+          <DisplayScores gameName={"circleNinja"} />
         </div>
       </div>
     </div>

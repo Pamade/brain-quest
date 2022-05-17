@@ -1,0 +1,38 @@
+$circleSize: 18px;
+
+@keyframes falling {
+    from {top: -5%;}
+    to {top: calc(105% - $circleSize)}
+}
+
+.circle-ninja{
+    @include baseWidth;
+    &__wrapper{
+        padding-bottom: 3rem;
+    }
+    &__game-box{
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        border: 1px solid $primary;
+        background-color: lighten($darkBackground, 35);
+        overflow: hidden;
+    }
+    &__circle{
+        left: 99%;
+        position: absolute;
+        font-size: $circleSize;
+        animation: falling;
+        animation-timing-function:linear;
+        animation-fill-mode: forwards;
+        cursor: pointer;
+        min-width: 50px;
+        font-weight: bold;
+        min-height: 50px;
+        padding: 3px;
+        border-radius: 50%;
+        line-height: 50px;
+        color: $secondary;
+        background-color: $primary;
+    }
+}
