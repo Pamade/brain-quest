@@ -7,6 +7,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-size: 0.8rem;
     }
     &__list{
         @include flexColumn;
@@ -17,7 +18,6 @@
         background-color: $secondary;
         width: 100%;
         text-align: center;
-        font-size: 13px;
         margin-top: -999px;
     }
     &__nav-mobile-show{
@@ -35,6 +35,7 @@
     .header{
         position: static;
         &__nav{
+            font-size: 0.75rem;
             flex-direction: row;
             justify-content: space-between;
         }
@@ -45,7 +46,6 @@
             margin: 0 auto;
             padding: 0;
             text-align: right;
-            font-size: 15px;
         }
         &__list-link{
             color: black;
@@ -59,6 +59,13 @@
         }
         &__hamburger{
             display: none;
+        }
+    }
+}
+@media (min-width:1200px){
+    .header{
+        &__nav{
+            font-size: 1rem;
         }
     }
 }
