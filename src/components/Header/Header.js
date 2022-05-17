@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <header className="header">
-      <nav className="header__nav">
+      <nav onClick={() => setIsMenu(!isMenu)} className="header__nav">
         <Link className="header__list-home" to="/">
           Brain Quest
         </Link>
@@ -48,7 +48,7 @@ function Header() {
           </li>
         </ul>
         <GiHamburgerMenu
-          onClick={() => setIsMenu(!isMenu)}
+          onClick={() => setIsMenu(true)}
           className="header__hamburger"
           fontSize={"25px"}
         />
