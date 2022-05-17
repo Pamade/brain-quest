@@ -6,7 +6,6 @@ const initialState = {
   results: localData ? localData : [],
 };
 
-const today = new Date().getTime();
 export const dashboardSlice = createSlice({
   name: "dashboard",
   initialState,
@@ -14,7 +13,7 @@ export const dashboardSlice = createSlice({
     addResult: (state, action) => {
       const { gameName, scores } = action.payload;
       const id = state.results.length + 1;
-      state.results.push({ id, gameName, scores, date: today });
+      state.results.push({ id, gameName, scores, date: new Date().getTime() });
       localStorage.setItem("dashboard", JSON.stringify(state.results));
     },
   },
