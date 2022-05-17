@@ -26,13 +26,24 @@ $circleSize: 18px;
         animation-timing-function:linear;
         animation-fill-mode: forwards;
         cursor: pointer;
-        min-width: 50px;
         font-weight: bold;
-        min-height: 50px;
         padding: 3px;
         border-radius: 50%;
-        line-height: 50px;
+        min-width: 40px;
+        min-height: 40px;
+        line-height: 40px;
         color: $secondary;
         background-color: $primary;
     }
+}
+
+@media (max-width: 768px){
+    .circle-ninja{
+        &__circle{
+            min-width: 20px;
+            min-height: 20px;
+            line-height: 20px;
+        }
+    }
+
 }
