@@ -29,12 +29,14 @@ function CircleNinja() {
   };
 
   const addCircle = () => {
+    const isGoodOrBad = Math.floor(Math.random() * 5) + 1;
     setId((id) => id + 1);
     setCircles((circles) => [
       ...circles,
       {
         number: id,
         position: Math.floor(Math.random() * 90) + 1 + "%",
+        isBad: isGoodOrBad !== 1 ? false : true,
         isHidden: false,
       },
     ]);
@@ -42,7 +44,7 @@ function CircleNinja() {
   };
 
   const hideCircle = (index) => {
-    if (touch === false) {
+    if (touch === false && !circles[circles.length - 1].isBad) {
       setPercent((percent) => percent - 10);
     }
     removeCircle(index);
@@ -65,7 +67,12 @@ function CircleNinja() {
   const handleClick = (index) => {
     removeCircle(index);
     addCircle();
-    setPoints((point) => point + 1);
+    if (circles[circles.length - 1].isBad) {
+      setPercent((percent) => percent - 10);
+    } else {
+      setPoints((point) => point + 1);
+    }
+
     if (points % 4 === 3) {
       setTime((time) => time / 1.1);
       setStage((stage) => stage + 1);
@@ -90,7 +97,11 @@ function CircleNinja() {
       (circle, index) =>
         !circle.isHidden && (
           <div
-            className="circle-ninja__circle"
+            className={
+              circle.isBad
+                ? "circle-ninja__circle circle-ninja__circle-bad"
+                : "circle-ninja__circle"
+            }
             key={index}
             style={{
               left: circle.position,
