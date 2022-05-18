@@ -76,6 +76,9 @@ function CircleNinja() {
     if (points % 4 === 3) {
       setTime((time) => time / 1.1);
       setStage((stage) => stage + 1);
+      if (percent !== 100) {
+        setPercent((percent) => percent + 10);
+      }
     }
   };
 
@@ -134,6 +137,10 @@ function CircleNinja() {
         <h3 className="game-heading">Circle Ninja</h3>
         <p className="stage">
           Stage {stage} <span>Points {points}</span>
+        </p>
+        <p>
+          Each stage you gain 10 health, clicking bad circles causes a loss of
+          hp
         </p>
         {!touch && percent === 0 && gameStart && (
           <h2 className="is-right">You lost</h2>
