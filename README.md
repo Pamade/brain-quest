@@ -2,7 +2,8 @@
 # Brain quest</br>
 
 
-![img](https://i.imgur.com/UivIbBR.jpg)
+
+![img](https://i.imgur.com/uVGjMAO.png)
 
 
 ## Użyte Technologie
@@ -12,12 +13,12 @@
 
 ## Opis
 Projekt stworzony w React, Redux, scss. Głównym założeniem strony było udoskonalenie umiejętności.<br/>
-Aktualnie dostępne są 3 mini gry. <br/>
+Aktualnie dostępne są 4 mini gry. <br/>
 Każda z gier, działa na zasadzie poziomów tj. jeżeli gracz udzieli pozytywnej odpowiedzi, nastąpi kolejny, trudniejszy etap, jenak gdy odpowiedź będzie błędna, gra się zakończy, a wyniki zostaną zapisane w sekcji Dashboard, za pomocą local storage, będą one możliwe do zobaczenia, po wyłączeniu przeglądarki/karty.
 
 ## Spis minigier
 1. Remember Number - na krótką chwilę wyświetlana jest liczba, która po czasie znika - użytkownik, musi ją zapamiętać i wpisać w input. Jeśli odpowiedź będzie poprawna, kolejna będzie o jedną cyfrę większa, natomiast gdy udzielona odpowiedź będzie błędna, następuje koniec.
-2. Where it was - na pewien momen w oddzielnych kafelkach, ukażą się losowo generowane cyfry od 1 do 9, po czym znikną. Gracz ma za zadanie, wybrać wskazane kafelki, jeśli, będą one zgodne, następuje kolejny etap, gdzie ilość elementów będzie rosła o jeden. Gdy chociaż jeden kafelek będzie wybrany, rozgrywka się kończy.
+2. Where it was - na pewien momen w oddzielnych kafelkach, ukażą się losowo generowane cyfry od 1 do 9, po czym znikną. Gracz ma za zadanie, wybrać wskazane kafelki, jeśli, będą one zgodne, następuje kolejny etap, gdzie ilość elementów będzie rosła o jeden. Gdy chociaż jeden kafelek będzie wybrany błędnie, rozgrywka się kończy.
 3. Remember Word - mużytkownik ma za zadanie określić, czy wyświetlone słowo było wcześniej pokazane, jeśli tak - musi wybrać przycisk "SEEN", natomiast, gdy wyraz pojawi się pierwszy raz "NEW". Jeśli trzykrotnie zostanie wybrany zły button, gra kończy się. Z api pobierane jest 200 losowych słów w języku angielski, które wraz z progresem, będą dodawane do zbioru wyrazów możliwych do wyświetlenia.
-
-W dalszym stopniu zamierzam rozwijać aplikacje
+4. Circle ninja - polega na trafieniu jak największej ilośći kółek, co czwarte trafione kółko, następuje kolejny poziom, a z tym skraca się czas animacji, co powoduje utrudnienie rozgrywki. Za każdy przepuszczony element pasek skraca się o 10%, gdy wartość paska osiągnie 0, gra kończy się. <br/><br/>
+W dalszym stopniu zamierzam rozwijać aplikacje 
