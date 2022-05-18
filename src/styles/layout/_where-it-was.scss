@@ -40,3 +40,11 @@
         }
     }
 }
+
+@media (max-width: 768px){
+    .where-it-was{
+        &__box{
+            width: 100%;
+        }
+    }
+}
