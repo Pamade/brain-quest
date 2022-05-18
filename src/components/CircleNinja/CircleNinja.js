@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Line } from "rc-progress";
 import { useDispatch } from "react-redux";
 import { addResult } from "../../features/dashboardSlice";
+
 function CircleNinja() {
   const [stage, setStage] = useState(1);
   const [id, setId] = useState(0);

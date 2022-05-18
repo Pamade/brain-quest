@@ -8,16 +8,19 @@
         text-align: left;
     }
     &__box{
-        padding: 1rem 0;
+        @include flexColumn;
+        padding: 1rem 0; 
+    }
+    &__image{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1rem;
+        border: 2px dashed $secondary;
     }
     &__description{
         margin: 0.3rem 0;
     }
-    &__video{
-        margin-top: 0.2rem;
-        width: 100%;
-        border: 3px dotted $secondary;
-    }
+
 }
 
 @media (min-width: 700px){
@@ -29,7 +32,8 @@
             flex-wrap: wrap;
         }
         &__box{
-            width: 48%;
+            width: 45%;
+            justify-content: space-between;
         }
     }
 }
