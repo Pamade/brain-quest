@@ -16,6 +16,20 @@ function CircleNinja() {
   let interval = null;
   const animationTime = time.toFixed(2) / 1000;
 
+  useEffect(() => {
+    if (gameStart === true && percent !== 0) {
+      interval = setInterval(() => {
+        hideCircle(id);
+        addCircle();
+      }, time);
+      return () => {
+        clearInterval(interval);
+      };
+    } else if (percent === 0) {
+      dispatch(addResult({ gameName: "circleNinja", scores: points }));
+    }
+  }, [circles, gameStart]);
+
   const removeCircle = (index) => {
     let circlesCopy = [];
     circlesCopy = circles.map((circle) => {
@@ -49,20 +63,6 @@ function CircleNinja() {
     }
     removeCircle(index);
   };
-
-  useEffect(() => {
-    if (gameStart === true && percent !== 0) {
-      interval = setInterval(() => {
-        hideCircle(id);
-        addCircle();
-      }, time);
-      return () => {
-        clearInterval(interval);
-      };
-    } else if (percent === 0) {
-      dispatch(addResult({ gameName: "circleNinja", scores: points }));
-    }
-  }, [circles, gameStart]);
 
   const handleClick = (index) => {
     removeCircle(index);
