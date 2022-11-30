@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addResult } from "../../features/dashboardSlice";
+import randomWords from "random-words";
 
 function WordsMemory() {
   const dispatch = useDispatch();
@@ -11,15 +12,12 @@ function WordsMemory() {
   const [stage, setStage] = useState(0);
   const [lives, setLives] = useState(3);
   const [gameReset, setGameReset] = useState(false);
+  const [formula, setFormula] = useState(0);
 
   useEffect(() => {
-    fetch("https://random-word-api.herokuapp.com/word?number=200").then(
-      (response) =>
-        response.json().then((data) => {
-          setAllWords(data);
-          setWordsToDisplay(data.slice(0, 3));
-        })
-    );
+    const fetchRandomWords = randomWords(100);
+    setAllWords(fetchRandomWords);
+    setWordsDisplayed(fetchRandomWords.slice(0, 3));
   }, [gameReset]);
 
   const handleStart = () => {
@@ -34,7 +32,7 @@ function WordsMemory() {
     const newArr = allWordsCopy.filter((word) => word !== randomNewWord);
     const randomExistingWord =
       wordsToDisplay[Math.floor(Math.random() * wordsToDisplay.length)];
-    const formula = Math.floor(Math.random() * 2);
+    setFormula(Math.floor(Math.random() * 2));
 
     if (formula === 1) {
       setSingleWord(randomExistingWord);
