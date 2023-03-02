@@ -22,3 +22,5 @@ Każda z gier, działa na zasadzie poziomów tj. jeżeli gracz udzieli pozytywne
 3. Remember Word - mużytkownik ma za zadanie określić, czy wyświetlone słowo było wcześniej pokazane, jeśli tak - musi wybrać przycisk "SEEN", natomiast, gdy wyraz pojawi się pierwszy raz "NEW". Jeśli trzykrotnie zostanie wybrany zły button, gra kończy się. Z api pobierane jest 200 losowych słów w języku angielski, które wraz z progresem, będą dodawane do zbioru wyrazów możliwych do wyświetlenia.
 4. Circle ninja - polega na trafieniu jak największej ilośći kółek, co czwarte trafione kółko, następuje kolejny poziom, a z tym skraca się czas animacji, co powoduje utrudnienie rozgrywki. Za każdy przepuszczony element pasek skraca się o 10%, gdy wartość paska osiągnie 0, gra kończy się. <br/><br/>
 W dalszym stopniu zamierzam rozwijać aplikacje 
+
+live: https://loquacious-pika-234024.netlify.app/
